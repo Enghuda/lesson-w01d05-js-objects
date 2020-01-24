@@ -190,6 +190,35 @@ Keep track of which books you read and which books you want to read!
 - Iterate through the array of books. For each book, log the book title and book author like so: "The Hobbit by J.R.R. Tolkien".
 - Now use an if/else statement to change the output depending on whether you read it yet or not. If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolkien', and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
 
+
+//.........................code
+
+var books = [ 
+    {title: "theury of bestashio", 
+    author: "fahad", 
+    alreadyRead : true},
+    {title: "student", 
+    author: "mmmm", 
+    alreadyRead : false},
+    {title: "story", 
+    author: "Agatha Chresty", 
+    alreadyRead : true}
+    ];
+  
+  for (var i = 0; i < books.length; i++ ){
+    if (books[i].alreadyRead === true){
+      console.log("You already read " + 
+      books[i].title + 
+      " by " +
+       books[i].author);
+    } else if (books[i].alreadyRead === false){
+        console.log("You still need to read " +
+         books[i].title + " by " + 
+         books[i].author + 
+         ".");
+      }
+}
+
 ### Lab: The Movie Database
 
 It's like IMDB, but much much smaller!
@@ -197,12 +226,46 @@ It's like IMDB, but much much smaller!
 - Create an object to store the following information about your favorite movie: title (a string), duration (a number), and stars (an array of strings).
 - Print out the movie information like so: "Puff the Magic Dragon lasts for 30 minutes. Stars: Puff, Jackie, Living Sneezes."
   - Maybe the [join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) method will be helpful here
+//.........................code
+
+    const someMovie = {
+    title: 'Puff the Magic Dragon',
+    duration: 30,
+    stars: [ 'Jackie', 'Living Sneezes' ]
+};
+console.log(someMovie.title + ' lasts for ' + someMovie.duration + ' minutes. Stars: ' +  someMovie.stars.join(', ') + '.');
+
+////join when i dont know how much i will writ
 
 ### Code Along: Collections
 
 - Create a list of words from a paragraph of text.
 - Create an object with each word as a key and the word frequencies (how many times does each unique word appear in
   the string) as the value.
+
+  //................code
+
+  const sourceParagraph = 'This is a this';
+    const lowercaseParagraph = sourceParagraph.toLowerCase();
+    const listOfWords = lowercaseParagraph.split(" ");
+    const wordFrquencies = {};
+
+
+
+    for (let i = 0; i < listOfWords.length; i++) {
+    const key = listOfWords[i];
+    console.log(key);
+
+    //in case the paper the word not found in the object
+
+    if(wordFrquencies[key]=== undefined){
+        wordFrquencies[key]=1;
+
+    }
+    else{
+        wordFrquencies[key]++;
+    }
+}
 
 ## Object Methods
 
@@ -220,6 +283,11 @@ const car = {
 
 car.make; // 'Ford'
 car.drive(20); // 'Vroooom! We drove 20 miles"
+
+//car.make
+//car.drive(10)
+//"Vroooom! We drove 10 miles"
+//function in side object is method
 ```
 
 ## Abstraction and Modeling
